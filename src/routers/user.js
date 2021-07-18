@@ -34,14 +34,11 @@ router.post('/login', async (req, res) => {
     
     try {
         const user = await User.findByCredentials(body.email, body.password) //custom model method - or the schema static method
-        if(!user) {
-            res.status(400).send('Invalid credentials')
-        }
 
         const token = await user.generateAuthToken()
         res.status(200).send({user, token})
     } catch(e) {
-        res.status(500).send(e.message || e)
+        res.status(400).send(e.message || e)
     }
 }, (err, req, res, next) => {
     res.status(400).send({error: err.message || err})
@@ -60,7 +57,7 @@ router.get('/me', auth, async (req, res) => {
     try {
         res.status(200).send(req.user)
     } catch(e) {
-        res.status(500).send(e)
+        res.status(401).send(e)
     }
 })
 
@@ -141,7 +138,7 @@ router.patch('/:id', auth, async (req, res) => {
 router.delete('/me', auth, async (req, res) => {
     try {
         sendCancellationEmail(req.user.email, req.user.name)
-        req.user.remove()
+        await req.user.remove()
         res.send('Your profile has been deleted successfully')
     } catch(e) {
         res.status(500).send(e)
