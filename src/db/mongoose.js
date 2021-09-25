@@ -1,5 +1,5 @@
 const mongoose = require('mongoose'); //Mongoose is a framework of mongodb just like express is a framewor of nodejs
-const validator =  require('validator')
+// const validator =  require('validator')
 
 const connectionUrl = process.env.MONGODB_URL //here the connection url is same as mongodb url, only difference is here we also provide the database  name in the url to connect to. Check dev.env file for its value
 

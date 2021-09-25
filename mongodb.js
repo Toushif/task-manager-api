@@ -83,7 +83,7 @@ const {MongoClient, ObjectID} = mongodb //the mongoClient will initialize the co
 
         console.log('result', user) //user is the returned result if the search is successful in that collection (users), if nothing is found then it'll return null
     }) */
-    /* Here in find method in colections we dont have a callback as the thord argument which we saw above. find method instead returns a cursor(read docs to read about cursors), which can be parsed intp an array object using toArray method which takes a callback as an argument */
+    /* Here in find method in colections we dont have a callback as the third argument which we saw above. find method instead returns a cursor(read docs to read about cursors), which can be parsed into an array object using toArray method which takes a callback as an argument */
     /* db.collection('users').find({ age: 28 }).toArray((error, users) => {
         if(error) {
             return console.log('Unable to find user!', error)
@@ -100,7 +100,7 @@ const {MongoClient, ObjectID} = mongodb //the mongoClient will initialize the co
         console.log('Counts:', count) //user is the returned result if the search is successful in that collection (users), if nothing is found then it'll return null
     }) */
     
-    //Update operation in MongoDB. Here in updateone first argument is ofcourse is a filter param either _id or any other property from the record to be updated, 2nd argument is the new value of a property which you want to update, and third arg is an optional callback you pass just like all the above examples. But if you dont pass a callback arg then the return value of tupdateone method is a promise which you can use to resolve or reject as below. $set operator updates the selected property value with the new value. Lie $set there are other operators as well like $inc, $min, $max, #unset, etc. Refer the reference doc for more. 
+    //Update operation in MongoDB. Here in updateone first argument is ofcourse is a filter param either _id or any other property from the record to be updated, 2nd argument is the new value of a property which you want to update, and third arg is an optional callback you pass just like all the above examples. But if you dont pass a callback arg then the return value of updateOne method is a promise which you can use to resolve or reject as below. $set operator updates the selected property value with the new value. Lie $set there are other operators as well like $inc, $min, $max, #unset, etc. Refer the reference doc for more. 
     /* db.collection('users').updateOne({ _id: new ObjectID('60e5b2fe8a33620ec809fcf8') }, {
         $set: {
             name: 'Boris'
