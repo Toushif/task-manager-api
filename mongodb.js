@@ -17,7 +17,7 @@ const {MongoClient, ObjectID} = mongodb //the mongoClient will initialize the co
 //         return console.log('Unable to connect to database!', error)
 //     }
 
-    // const db = client.db(databaseName) //here we use db method on client tpo get connection to a specific database. We dont need to use s=create db commands as such, clent.db will create a reference to our local database a new database instance names 'task-manager'
+    // const db = client.db(databaseName) //here we use db method on client to get connection to a specific database. We dont need to use s=create db commands as such, clent.db will create a reference to our local database a new database instance names 'task-manager'
     // console.log(client)
     /* db.collection('users').insertOne({
         name: 'Toushif',
@@ -27,7 +27,7 @@ const {MongoClient, ObjectID} = mongodb //the mongoClient will initialize the co
             return console.log('Unable to insert user!', error)
         }
 
-        console.log('result', resullt.ops)  //ops contain all the document information needed
+        console.log('result', result.ops)  //ops contain all the document information needed
     }) */
     
     /* db.collection('users').insertMany([
