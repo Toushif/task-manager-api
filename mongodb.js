@@ -1,7 +1,7 @@
 //http://mongodb.github.io/node-mongodb-native/3.6/api
 
 const mongodb = require('mongodb')
-const {MongoClient, ObjectID} = mongodb //the mongoClient will initialize the connection and give us acess to all the functions necessary to do more operations. Check http://mongodb.github.io/node-mongodb-native/3.6/api/MongoClient.html
+const {MongoClient, ObjectID} = mongodb //the mongoClient will initialize the connection and give us access to all the functions necessary to do more operations. Check http://mongodb.github.io/node-mongodb-native/3.6/api/MongoClient.html
 
 // const id = new ObjectID() //generate a new unique global id
 // console.log('ID:', id, id.getTimestamp()) //chec docs for how the id is generated and whats the meaning of id - like the first 4 bits are the timestamp of when that id was created, the next 5 bits are randomly gerenated and so on...
